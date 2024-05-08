@@ -37,9 +37,5 @@ next-env.d.ts
 
 /videos
 /videos/*
+
 # next-video
-videos/*
-!videos/*.json
-!videos/*.js
-!videos/*.ts
-public/_next-video
