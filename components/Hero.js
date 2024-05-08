@@ -5,8 +5,8 @@ import Video from 'next-video'
 import { heroVideo,smallHeroVideo } from '@/utils';
 import { useEffect, useState } from 'react';
 const Hero = () => {
-    // const [videoSrc, setVideoSrc] = useState(window.innerWidth > 760 ? heroVideo : smallHeroVideo)
-    const [videoSrc, setVideoSrc] = useState(heroVideo)
+    const [videoSrc, setVideoSrc] = useState(window.innerWidth > 760 ? heroVideo : smallHeroVideo)
+    // const [videoSrc, setVideoSrc] = useState(heroVideo)
     useEffect(() => {
         handleVideoSrcSet
         window.addEventListener('resize', handleVideoSrcSet)
