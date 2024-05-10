@@ -1,11 +1,11 @@
 "use client";
+import React from 'react';
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { heroVideo,smallHeroVideo } from '@/public/utils';
 import { useEffect, useState } from 'react';
 const Hero = () => {
     const [videoSrc, setVideoSrc] = useState(window.innerWidth > 760 ? heroVideo : smallHeroVideo)
-    // const [videoSrc, setVideoSrc] = useState(heroVideo)
     useEffect(() => {
         handleVideoSrcSet
         window.addEventListener('resize', handleVideoSrcSet)
