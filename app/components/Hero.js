@@ -1,8 +1,7 @@
 "use client";
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import Video from 'next-video'
-import { heroVideo,smallHeroVideo } from '@/utils';
+import { heroVideo,smallHeroVideo } from '@/public/utils';
 import { useEffect, useState } from 'react';
 const Hero = () => {
     const [videoSrc, setVideoSrc] = useState(window.innerWidth > 760 ? heroVideo : smallHeroVideo)
@@ -26,7 +25,7 @@ const Hero = () => {
         <div className="h-5/6 w-full flex-center flex-col">
             <p id="hero" className="hero-title"> iPhone 15 Pro</p>
             <div className="md:w-10/12 w-9/12 overflow-hidden">
-                <Video src={videoSrc} autoPlay muted playsInline={true} controls={false} key={videoSrc} preLoad="none" className="z-[-1]"/>
+                <video src={videoSrc} autoPlay muted playsInline={true} controls={false} key={videoSrc} preLoad="none" className="z-[-1]"/>
             </div>
 
         </div>

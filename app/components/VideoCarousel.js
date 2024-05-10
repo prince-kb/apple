@@ -5,10 +5,9 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 import { useEffect, useRef, useState } from "react";
 
-import { hightlightsSlides } from "../constants";
-import { pauseImg, playImg, replayImg } from "../utils";
+import { hightlightsSlides } from "../../public/constants";
+import { pauseImg, playImg, replayImg } from "../../public/utils";
 import Image from "next/image";
-import Video from 'next-video'
 
 const VideoCarousel = () => {
   const videoRef = useRef([]);
@@ -148,7 +147,7 @@ const VideoCarousel = () => {
           <div key={list.id} id="slider" className="sm:pr-20 pr-10">
             <div className="video-carousel_container ">
               <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
-                <Video
+                <video
                   controls={false}
                   src={list.video}
                   id="video"
