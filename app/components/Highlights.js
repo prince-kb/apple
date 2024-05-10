@@ -1,11 +1,13 @@
 "use client";
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+const VideoCarousel = dynamic(() => import('./VideoCarousel'), {ssr: false})
 
 
-import VideoCarousel from './VideoCarousel'
+// import VideoCarousel from './VideoCarousel'
 import { rightImg, watchImg } from "@/public/utils";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 const Highlights = () => {
   useGSAP(() => {
@@ -26,7 +28,7 @@ const Highlights = () => {
             </p>
             <p className="link">
               Watch the event
-              <Image height={16} width={16} src={rightImg} alt="right" className="ml-2" />
+              <Image height={16} width="auto" src={rightImg} alt="right" className="ml-2" />
             </p>
           </div>
         </div>
