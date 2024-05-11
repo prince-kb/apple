@@ -18,7 +18,7 @@ const Hero = () => {
     }
     useGSAP(()=>{
         gsap.to('#hero',{opacity:1,duration:2})
-        gsap.to('#cta',{opacity:1,y:0,duration:2,delay:1.5})
+        gsap.to('#cta',{opacity:1,y:0,duration:2,delay:1})
     },[])
   return (
     <section className="w-full nav-height relative">

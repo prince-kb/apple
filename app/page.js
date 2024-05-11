@@ -3,7 +3,10 @@ import Highlights from '@/app/components/Highlights'
 import Navbar from '@/app/components/Navbar'
 import React from 'react'
 import dynamic from 'next/dynamic'
+// import Model from './components/Model'
 const Hero = dynamic(() => import('@/app/components/Hero'), {ssr: false})
+const Model = dynamic(() => import('@/app/components/Model'), {ssr: false})
+
 
 const App = () => {
   return (
@@ -11,6 +14,7 @@ const App = () => {
         <Navbar/>
         <Hero/>
         <Highlights/>
+        <Model/>
     </main>
   )
 }
