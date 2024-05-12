@@ -1,18 +1,15 @@
-"use client"
+"use client";
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap";
-// const ModelView = dynamic(() => import('./ModelView'), {ssr: false})
-
 import ModelView from "./ModelView";
 import { useEffect, useRef, useState } from "react";
-import { yellowImg } from '@/public/utils'
+import { yellowImg } from "../../public/utils";
 
 import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-import { models, sizes } from '@/public/constants'
-import dynamic from "next/dynamic";
-import { animateWithGsapTimeline } from "@/public/utils/animations";
+import { models, sizes } from "../../public/constants";
+import { animateWithGsapTimeline } from "../../public/utils/animations";
 
 const Model = () => {
   const [size, setSize] = useState('small');
@@ -64,8 +61,7 @@ const Model = () => {
         </h1>
 
         <div className="flex flex-col items-center mt-5">
-
-        <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
+          <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
             <ModelView 
               index={1}
               groupRef={small}
@@ -73,7 +69,7 @@ const Model = () => {
               controlRef={cameraControlSmall}
               setRotationState={setSmallRotation}
               item={model}
-              size={'large'}
+              size={size}
             />  
 
             <ModelView 
@@ -89,14 +85,14 @@ const Model = () => {
             <Canvas
               className="w-full h-full"
               style={{
-                position: 'relative',
+                position: 'fixed',
                 top: 0,
                 bottom: 0,
                 left: 0,
                 right: 0,
                 overflow: 'hidden'
               }}
-              eventSource={document.getElementById('root')}
+              eventSource={document ? document.getElementById('root') : null}
             >
               <View.Port />
             </Canvas>
