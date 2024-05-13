@@ -25,12 +25,11 @@ const VideoCarousel = () => {
 
   const [loadedData, setLoadedData] = useState([]);
   const { isEnd, isLastVideo, startPlay, videoId, isPlaying } = video;
-
   useGSAP(() => {
     
     gsap.to("#slider", {
       transform: `translateX(${-100 * videoId}%)`,
-      duration: 2,
+      duration: 1.5,
       ease: "power2.inOut", 
     });
 
@@ -102,7 +101,6 @@ const VideoCarousel = () => {
       };
 
       if (isPlaying) {
-        
         gsap.ticker.add(animUpdate);
       } else {
         
@@ -114,9 +112,13 @@ const VideoCarousel = () => {
   useEffect(() => {
     if (loadedData.length > 3) {
       if (!isPlaying) {
-        videoRef.current[videoId].pause();
+        setTimeout(() => {
+          videoRef.current[videoId].pause();
+        }, 500);
       } else {
+        setTimeout(() => {
         startPlay && videoRef.current[videoId].play();
+        },500)
       }
     }
   }, [startPlay, videoId, isPlaying, loadedData]);
@@ -150,6 +152,11 @@ const VideoCarousel = () => {
   };
 
   const handleLoadedMetaData = (i, e) => setLoadedData((pre) => [...pre, e]);
+  const vspeed = () => { 
+    const v =document.querySelector('#video');
+    if(v) v.PlaybackRate = 0.5;
+      }
+    vspeed();
 
   return (
     <>
@@ -169,6 +176,7 @@ const VideoCarousel = () => {
                   onEnded={() => i !== 3 ? handleProcess("video-end", i) : handleProcess("video-last")}
                   onPlay={() =>  setVideo((pre) => ({ ...pre, isPlaying: true }))}
                   onLoadedMetadata={(e) => handleLoadedMetaData(i, e)}
+                  type="video/mp4"
                 />
               </div>
 

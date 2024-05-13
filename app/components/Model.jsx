@@ -83,9 +83,9 @@ const Model = () => {
             />
 
             <Canvas
-              className="w-full h-full"
+              className="w-full h-full fixed"
               style={{
-                position: 'fixed',
+                // position: 'relative',
                 top: 0,
                 bottom: 0,
                 left: 0,
