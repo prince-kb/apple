@@ -22,6 +22,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
 
       <OrbitControls 
         autoRotate
+        autoRotateSpeed={5}
         makeDefault
         ref={controlRef}
         enableZoom={false}
