@@ -72,7 +72,7 @@ const Model = () => {
               size={size}
             />  
 
-            <ModelView 
+            <ModelView
               index={2}
               groupRef={large}
               gsapType="view2"
