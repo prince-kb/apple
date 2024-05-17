@@ -57,7 +57,7 @@ const Features = () => {
                                 <Image src={explore2Img} alt='Titanium2' className='feature-video g_grow' height="full" width="auto"/>
                             </div>
                         </div>
-                        <div className="feature-text-ceonatiner">
+                        <div className="feature-text-ceonatiner gap-2">
                             <div className="flex-1 flex-center">
                                 <p className="feature-text g_text">iPhone !5 Pro is {' '}
                                 <span className='text-white'>the first iPhone to feature an aerospace-grade titanium design</span>,
